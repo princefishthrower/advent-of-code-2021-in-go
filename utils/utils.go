@@ -38,12 +38,21 @@ func Sum(array []int) int {
 
 func StringArrayToIntArray(array []string) []int {
 	var intArray []int
-	for index, item := range array {
+	for _, item := range array {
 		number, err := strconv.ParseInt(item, 10, 0)
 		if err != nil {
 			log.Fatalf("Could not parse number from string: %s", item)
 		}
-		intArray[index] = int(number)
+		intArray = append(intArray, int(number))
 	}
 	return intArray
+}
+
+func Contains(s []int, e int) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
+	return false
 }

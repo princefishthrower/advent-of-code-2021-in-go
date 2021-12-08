@@ -56,3 +56,30 @@ func Contains(s []int, e int) bool {
 	}
 	return false
 }
+
+func Max(array []int) int {
+	var max int = array[0]
+	for _, value := range array {
+		if max < value {
+			max = value
+		}
+	}
+	return max
+}
+
+func Min(array []int) int {
+	var min int = array[0]
+	for _, value := range array {
+		if min > value {
+			min = value
+		}
+	}
+	return min
+}
+
+func Abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}

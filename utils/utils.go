@@ -83,3 +83,29 @@ func Abs(x int) int {
 	}
 	return x
 }
+
+func UnorderedEqual(first, second []string) bool {
+	if len(first) != len(second) {
+		return false
+	}
+	exists := make(map[string]bool)
+	for _, value := range first {
+		exists[value] = true
+	}
+	for _, value := range second {
+		if !exists[value] {
+			return false
+		}
+	}
+	return true
+}
+
+func CountOccurances(items []int, value int) int {
+	count := 0
+	for _, item := range items {
+		if item == value {
+			count++
+		}
+	}
+	return count
+}
